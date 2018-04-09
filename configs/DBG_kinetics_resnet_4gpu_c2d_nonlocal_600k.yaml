@@ -1,0 +1,80 @@
+DATADIR: ../data/lmdb/kinetics_lmdb_multicrop/
+FILENAME_GT: ../process_data/kinetics/vallist.txt
+
+NUM_GPUS: 4
+LOG_PERIOD: 10
+
+MODEL:
+  NUM_CLASSES: 400
+  MODEL_NAME: resnet_video
+  BN_MOMENTUM: 0.9
+  BN_EPSILON: 1.0000001e-5
+  ALLOW_INPLACE_SUM: True
+  ALLOW_INPLACE_RELU: True
+  ALLOW_INPLACE_RESHAPE: True
+  MEMONGER: True
+
+  BN_INIT_GAMMA: 0.0
+  DEPTH: 50
+  VIDEO_ARC_CHOICE: 1
+
+RESNETS:
+  NUM_GROUPS: 1  # ResNet: 1x; RESNETS: 32x
+  WIDTH_PER_GROUP: 64  # ResNet: 64d; RESNETS: 4d
+  TRANS_FUNC: bottleneck_transformation_3d # bottleneck_transformation, basic_transformation
+
+TRAIN:
+  DATA_TYPE: train
+  BATCH_SIZE: 32
+  EVAL_PERIOD: 20000
+  JITTER_SCALES: [256, 320]
+
+  MEM_CACHE: False
+  COMPUTE_PRECISE_BN: True
+  CROP_SIZE: 224 # 112
+
+  VIDEO_LENGTH: 8  # default: 32  # <===============
+  SAMPLE_RATE: 8  # default: 2  # <===============
+  TEST_AFTER_TRAIN: True
+
+TEST:
+  DATA_TYPE: val
+  BATCH_SIZE: 32
+  CROP_SIZE: 224 # 224
+  SCALE: 256 # 128
+
+  VIDEO_LENGTH: 8  # default: 32  # <===============
+  SAMPLE_RATE: 8  # default: 2  # <===============
+
+  OUTPUT_NAME: softmax # output layer name
+  DATASET_SIZE: 19761 # total test video number
+  NUM_TEST_CLIPS: 30 # 10 clips and 3 crops per clip
+
+SOLVER:
+  LR_POLICY: 'steps_with_relative_lrs' # 'step', 'steps_with_lrs', 'steps_with_relative_lrs', 'steps_with_decay'
+  BASE_LR: 0.005
+  STEP_SIZES: [300000, 200000, 100000] # [150150, 150150, 150150] # 30, 30, 30 epochs
+  LRS: [1, 0.1, 0.01, 0.001]
+  MAX_ITER: 600000 # 50000
+
+  WEIGHT_DECAY: 0.0001
+  WEIGHT_DECAY_BN: 0.0
+  MOMENTUM: 0.9
+  NESTEROV: True
+  SCALE_MOMENTUM: True
+
+  WARMUP:
+    WARMUP_ON: False
+    WARMUP_START_LR: 0.001
+    WARMUP_END_ITER: 2000
+
+CHECKPOINT:
+  DIR: .
+  CHECKPOINT_PERIOD: 10000
+
+NONLOCAL:
+  USE_ZERO_INIT_CONV: False
+  USE_BN: True
+  CONV3_NONLOCAL: True
+  CONV4_NONLOCAL: True
+  USE_SCALE: True
