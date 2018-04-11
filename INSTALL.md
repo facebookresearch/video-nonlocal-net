@@ -78,8 +78,8 @@ conda install --yes tornado
 Modify your bashrc by adding (assuming "/home/USERNAME/anaconda2/" is directory for anaconda):
 ```Shell
 export PATH=/home/USERNAME/anaconda2/envs/caffe2/bin:/usr/local/bin:/usr/local/cuda-8.0/bin:$PATH
-export C_INLCUDE_PATH=/home/USERNAME/anaconda2/envs/caffe2/include:/usr/local/cuda-8.0/include:$C_INLCUDE_PATH
-export CPLUS_INLCUDE_PATH=/home/USERNAME/anaconda2/envs/caffe2/include:/usr/local/cuda-8.0/include:$CPLUS_INLCUDE_PATH
+export C_INCLUDE_PATH=/home/USERNAME/anaconda2/envs/caffe2/include:/usr/local/cuda-8.0/include:$C_INLCUDE_PATH
+export CPLUS_INCLUDE_PATH=/home/USERNAME/anaconda2/envs/caffe2/include:/usr/local/cuda-8.0/include:$CPLUS_INLCUDE_PATH
 export LD_LIBRARY_PATH=/home/USERNAME/anaconda2/envs/caffe2/lib:/usr/lib64:/usr/local/cuda-8.0/lib64:/usr/local/cuda-8.0/lib:$LD_LIBRARY_PATH
 export LIBRARY_PATH=/home/USERNAME/anaconda2/envs/caffe2/lib:/usr/lib64:/usr/local/cuda-8.0/lib64:/usr/local/cuda-8.0/lib:$LIBRARY_PATH
 conda activate caffe2
