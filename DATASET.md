@@ -52,22 +52,29 @@ cd process_data/kinetics
     python shuffle_list_rep.py trainlist_shuffle_rep.txt
     ```
 
-3. Create the lmdb according to the list. Note that the lmdb is only storing the file names instead of the videos themselves. The test set is the same as the validation set. During training, the validation error is measured on random cropped examples. During testing, we perform FCN (spatial) test without flipping by default.
+3. Create the lmdb according to the list. Note that the lmdb is only storing the file names instead of the videos themselves. The test set is the same as the validation set. During training, the validation error is measured on random cropped examples. For each example in lmdb, there are 2 elements: video name and the class label for the video.
     ```Shell
     mkdir ../../data/lmdb
     mkdir ../../data/lmdb/kinetics_lmdb_multicrop
     python create_video_lmdb.py --dataset_dir ../../data/lmdb/kinetics_lmdb_multicrop/train  --list_file trainlist_shuffle_rep.txt
     python create_video_lmdb.py --dataset_dir ../../data/lmdb/kinetics_lmdb_multicrop/val  --list_file vallist.txt
+    ```
+
+4.  **The testing lmdb is in a different format from the validation lmdb.** This is the lmdb for FCN (spatial) testing without flipping. For each sample, there are 4 elements: video name, index for the video, index for the start frame and index for the spatial location for cropping.
+    ```Shell
     python create_video_lmdb_test_multicrop.py --dataset_dir ../../data/lmdb/kinetics_lmdb_multicrop/test  --list_file vallist.txt
     ```
 
-4.  (Optional:) This is the lmdb for FCN (spatial) testing with flipping.
+Note that the variable [labels](https://github.com/facebookresearch/video-nonlocal-net/blob/master/tools/test_net_video.py#L112) indicates the index of the video instead of the actual class label during test time. The actual labels for evaluation is read via [here](https://github.com/facebookresearch/video-nonlocal-net/blob/master/tools/test_net_video.py#L195) from cfg.FILENAME_GT in the code. 
+
+
+5.  (Optional:) This is the lmdb for FCN (spatial) testing with flipping.
     ```Shell
     mkdir ../../data/lmdb/kinetics_lmdb_flipcrop
     python create_video_lmdb_test_flipcrop.py --dataset_dir ../../data/lmdb/kinetics_lmdb_flipcrop/test  --list_file vallist.txt
     ```
 
-5.  (Optional:) This is the lmdb for testing by only using center cropped examples.
+6.  (Optional:) This is the lmdb for testing by only using center cropped examples.
     ```Shell
     mkdir ../../data/lmdb/kinetics_lmdb_singlecrop
     python create_video_lmdb_test.py --dataset_dir ../../data/lmdb/kinetics_lmdb_singlecrop/test  --list_file vallist.txt

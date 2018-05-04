@@ -108,6 +108,7 @@ def test_net_one_section():
 
             softmax_gpu = workspace.FetchBlob(prefix + cfg.TEST.OUTPUT_NAME)
             softmax_gpu = softmax_gpu.reshape((softmax_gpu.shape[0], -1))
+            # This is the index of the video for recording results, not the actual class label for the video 
             video_id_gpu = workspace.FetchBlob(prefix + 'labels')
 
             for i in range(len(video_id_gpu)):
