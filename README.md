@@ -144,6 +144,13 @@ as in the script:
 run_test_multicrop.sh
 ```
 
+## Fine-tuning
+
+The fine-tuning process is almost exactly the same as the training process. The only difference is that you need to first modify our Kinectis pre-trained model by removing the iteration number, momentum and last layer parameters, which is done with
+```Shell
+process_data/convert_models/modify_blob_rm.py
+```
+
 ## Acknowledgement
 
 The authors would like to thank [Haoqi Fan](https://research.fb.com/people/fan-haoqi/) for training the models and re-producing the results at FAIR with this code.
