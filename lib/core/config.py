@@ -75,7 +75,7 @@ __C.TRAIN.ITER_COMPUTE_PRECISE_BN = 200
 
 # Number of iterations after which model should be tested on test/val data
 __C.TRAIN.EVAL_PERIOD = 5005
-__C.TRAIN.DATASET_SIZE = 1281167
+__C.TRAIN.DATASET_SIZE = 234643
 
 __C.TRAIN.VIDEO_LENGTH = 32
 __C.TRAIN.SAMPLE_RATE = 2
