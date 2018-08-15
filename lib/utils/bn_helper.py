@@ -173,7 +173,7 @@ class BatchNormHelper():
                 single_batch_inv_std = workspace.FetchBlob(
                     layername + '_bn_siv')
 
-                single_batch_var = (1. / single_batch_inv_std) ** 2 - bn_eps
+                single_batch_var = (1. / single_batch_inv_std) ** 2 + bn_eps
                 # var = mean(x ** 2) - mean(x) ** 2
                 # np.mean(x ** 2, axis=1) - np.mean(x, axis=1) ** 2
                 single_batch_meanX2 = \
