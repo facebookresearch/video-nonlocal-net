@@ -95,6 +95,8 @@ def test_net_one_section():
                     temp_img = data_blob[i, :, j, :, :]
                     temp_img = temp_img.transpose([1, 2, 0])
                     temp_img = temp_img.astype(np.uint8)
+                    if not cfg.MODEL.USE_BGR:
+                        temp_img = cv2.cvtColor(temp_img, cv2.COLOR_RGB2BGR)
                     fname = save_path + 'ori_' + str(test_iter) \
                         + '_' + str(i) + '_' + str(j) + '.jpg'
                     cv2.imwrite(fname, temp_img)
