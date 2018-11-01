@@ -99,9 +99,6 @@ def test_net_one_section():
                         + '_' + str(i) + '_' + str(j) + '.jpg'
                     cv2.imwrite(fname, temp_img)
 
-        """
-        When testing, we assume all samples in the same gpu are of the same id
-        """
         video_ids_list = []  # for logging
         for gpu_id in range(cfg.NUM_GPUS):
             prefix = 'gpu_{}/'.format(gpu_id)
