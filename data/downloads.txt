@@ -1,7 +1,7 @@
 # Model downloads
 
 Pre-trained model can be downloaded from here:
-wget https://s3.amazonaws.com/video-nonlocal/pretrained_model.tar.gz
+wget https://dl.fbaipublicfiles.com/video-nonlocal/pretrained_model.tar.gz
 
 and extract the models to the current folder:
 tar xzf pretrained_model.tar.gz

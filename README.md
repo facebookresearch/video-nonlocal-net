@@ -33,9 +33,9 @@ mkdir pretrained_model
 mkdir checkpoints
 ```
 #### ImageNet pre-trained models
-They can be downloaded from: [pretrained_model.tar.gz](https://s3.amazonaws.com/video-nonlocal/pretrained_model.tar.gz). Extract the models to the current folder:
+They can be downloaded from: [pretrained_model.tar.gz](https://dl.fbaipublicfiles.com/video-nonlocal/pretrained_model.tar.gz). Extract the models to the current folder:
 ```Shell
-wget https://s3.amazonaws.com/video-nonlocal/pretrained_model.tar.gz
+wget https://dl.fbaipublicfiles.com/video-nonlocal/pretrained_model.tar.gz
 tar xzf pretrained_model.tar.gz
 ```
 
@@ -56,12 +56,12 @@ We report the benchmarks with ResNet-50 backbone as below. All the numbers are o
 
 | <sub>script</sub> | <sub>input frames</sub> | <sub>freeze bn?</sub> | <sub>3D conv?</sub> | <sub>non-local?</sub> | <sub>top1</sub> | <sub>in paper</sub> | <sub>top5</sub> | <sub>model</sub> | <sub>logs</sub> |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| <sub>run_c2d_baseline_400k_32f.sh</sub> | 32 | - | - | - | 72.0 | <sub>71.8</sub> | 90.0 | [`link`](https://s3.amazonaws.com/video-nonlocal/c2d_baseline_32x2_IN_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/c2d_baseline_32x2_IN_pretrain_400k.log) |
-| <sub>run_c2d_nlnet_400k_32f.sh</sub> | 32 | - | - | Yes | 73.9 | <sub>73.8</sub> | 91.0 | [`link`](https://s3.amazonaws.com/video-nonlocal/c2d_nonlocal_32x2_IN_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/c2d_nonlocal_32x2_IN_pretrain_400k.log) |
-| <sub>run_i3d_baseline_400k_32f.sh</sub> | 32 | - | Yes | - | 73.6 | <sub>73.3</sub> | 90.8 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_32x2_IN_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_32x2_IN_pretrain_400k.log) |
-| <sub>run_i3d_nlnet_400k_32f.sh</sub> | 32 | - | Yes | Yes | 74.9 | <sub>74.9</sub> | 91.6 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_nonlocal_32x2_IN_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_nonlocal_32x2_IN_pretrain_400k.log) |
-| <sub>run_i3d_baseline_affine_400k_128f.sh</sub> | 128 | Yes | Yes | - | 75.2 | <sub>74.9</sub> | 92.0 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_128x1_I3D_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_128x1_I3D_pretrain_400k.log) |
-| <sub>run_i3d_nlnet_affine_400k_128f.sh</sub> | 128 | Yes | Yes | Yes | 76.5 | <sub>76.5</sub> | 92.7 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_nonlocal_128x1_I3D_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_nonlocal_128x1_I3D_pretrain_400k.log) |
+| <sub>run_c2d_baseline_400k_32f.sh</sub> | 32 | - | - | - | 72.0 | <sub>71.8</sub> | 90.0 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/c2d_baseline_32x2_IN_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/c2d_baseline_32x2_IN_pretrain_400k.log) |
+| <sub>run_c2d_nlnet_400k_32f.sh</sub> | 32 | - | - | Yes | 73.9 | <sub>73.8</sub> | 91.0 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/c2d_nonlocal_32x2_IN_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/c2d_nonlocal_32x2_IN_pretrain_400k.log) |
+| <sub>run_i3d_baseline_400k_32f.sh</sub> | 32 | - | Yes | - | 73.6 | <sub>73.3</sub> | 90.8 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_32x2_IN_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_32x2_IN_pretrain_400k.log) |
+| <sub>run_i3d_nlnet_400k_32f.sh</sub> | 32 | - | Yes | Yes | 74.9 | <sub>74.9</sub> | 91.6 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_nonlocal_32x2_IN_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_nonlocal_32x2_IN_pretrain_400k.log) |
+| <sub>run_i3d_baseline_affine_400k_128f.sh</sub> | 128 | Yes | Yes | - | 75.2 | <sub>74.9</sub> | 92.0 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_128x1_I3D_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_128x1_I3D_pretrain_400k.log) |
+| <sub>run_i3d_nlnet_affine_400k_128f.sh</sub> | 128 | Yes | Yes | Yes | 76.5 | <sub>76.5</sub> | 92.7 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_nonlocal_128x1_I3D_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_nonlocal_128x1_I3D_pretrain_400k.log) |
 
 #### Modifications for improving speed
 
@@ -72,19 +72,19 @@ Besides releasing the models following the exact parameter settings in the paper
 
 | <sub>script</sub> | <sub>input frames</sub> | <sub>freeze bn?</sub> | <sub>3D conv?</sub> | <sub>non-local?</sub> | <sub>top1</sub> | <sub>top5</sub> | <sub>model</sub> | <sub>logs</sub> |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| <sub>run_c2d_baseline_400k.sh</sub> | 8 | - |  - | - | 71.9 | 90.0 | [`link`](https://s3.amazonaws.com/video-nonlocal/c2d_baseline_8x8_IN_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/c2d_baseline_8x8_IN_pretrain_400k.log) |
-| <sub>run_c2d_nlnet_400k.sh</sub> | 8 | - |  - | Yes | 74.4 | 91.4 | [`link`](https://s3.amazonaws.com/video-nonlocal/c2d_nonlocal_8x8_IN_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/c2d_nonlocal_8x8_IN_pretrain_400k.log)|
-| <sub>run_i3d_baseline_400k.sh</sub> | 8 | - |  Yes | - | 73.4 | 90.9 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baesline_8x8_IN_pretrain_400k.log) |
-| <sub>run_i3d_nlnet_400k.sh</sub> | 8 | - |  Yes | Yes | 74.7 | 91.6 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_nonlocal_8x8_IN_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_nonlocal_8x8_IN_pretrain_400k.log) |
-| <sub>run_i3d_baseline_affine_400k.sh</sub> | 32 | Yes |  Yes | - | 75.5 | 92.0 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_32x4_I3D_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_32x4_I3D_pretrain_400k.log) |
-| <sub>run_i3d_nlnet_affine_400k.sh</sub> | 32 | Yes |  Yes | Yes | 76.5 | 92.6 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_nonlocal_32x4_I3D_pretrain_400k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_nonlocal_32x4_I3D_pretrain_400k.log) |
+| <sub>run_c2d_baseline_400k.sh</sub> | 8 | - |  - | - | 71.9 | 90.0 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/c2d_baseline_8x8_IN_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/c2d_baseline_8x8_IN_pretrain_400k.log) |
+| <sub>run_c2d_nlnet_400k.sh</sub> | 8 | - |  - | Yes | 74.4 | 91.4 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/c2d_nonlocal_8x8_IN_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/c2d_nonlocal_8x8_IN_pretrain_400k.log)|
+| <sub>run_i3d_baseline_400k.sh</sub> | 8 | - |  Yes | - | 73.4 | 90.9 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baesline_8x8_IN_pretrain_400k.log) |
+| <sub>run_i3d_nlnet_400k.sh</sub> | 8 | - |  Yes | Yes | 74.7 | 91.6 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_nonlocal_8x8_IN_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_nonlocal_8x8_IN_pretrain_400k.log) |
+| <sub>run_i3d_baseline_affine_400k.sh</sub> | 32 | Yes |  Yes | - | 75.5 | 92.0 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_32x4_I3D_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_32x4_I3D_pretrain_400k.log) |
+| <sub>run_i3d_nlnet_affine_400k.sh</sub> | 32 | Yes |  Yes | Yes | 76.5 | 92.6 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_nonlocal_32x4_I3D_pretrain_400k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_nonlocal_32x4_I3D_pretrain_400k.log) |
 
 
 * **Fewer training iterations**.  With sparser sampling of inputs, we further reduce the training time by reducing the training iterations. Instead of training for 400K iterations in the paper, we can train our model with 300K iterations. This reduces training epochs by 25% without losing much performance.
 
 | <sub>script</sub> | <sub>input frames</sub> | <sub>freeze bn?</sub> | <sub>3D conv?</sub> | <sub>non-local?</sub> | <sub>top1</sub> | <sub>top5</sub> | <sub>model</sub> | <sub>logs</sub> |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| <sub>run_i3d_baseline_300k.sh</sub> | 8 | - | Yes | - | 73.2 | 90.8 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_300k.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_300k.log) |
+| <sub>run_i3d_baseline_300k.sh</sub> | 8 | - | Yes | - | 73.2 | 90.8 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_300k.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_300k.log) |
 
 #### Training with fewer GPUs
 
@@ -94,8 +94,8 @@ Besides releasing the models following the exact parameter settings in the paper
 
 | <sub>script</sub> | <sub>input frames</sub> | <sub>GPUs</sub> | <sub>freeze bn?</sub> | <sub>3D conv?</sub> | <sub>non-local?</sub> | <sub>top1</sub> | <sub>top5</sub> | <sub>model</sub> | <sub>logs</sub> |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| <sub>run_i3d_baseline_600k_4gpu.sh</sub> | 8 | 4 | - | Yes | -  | 73.0 | 90.4 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_600k_4gpu.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_600k_4gpu.log) |
-| <sub>run_i3d_baseline_300k_4gpu.sh</sub> | 8 | 4 | - | Yes | -  | 72.0 | 90.1 | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_300k_4gpu.pkl) | [`link`](https://s3.amazonaws.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_300k_4gpu.log) |
+| <sub>run_i3d_baseline_600k_4gpu.sh</sub> | 8 | 4 | - | Yes | -  | 73.0 | 90.4 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_600k_4gpu.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_600k_4gpu.log) |
+| <sub>run_i3d_baseline_300k_4gpu.sh</sub> | 8 | 4 | - | Yes | -  | 72.0 | 90.1 | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_300k_4gpu.pkl) | [`link`](https://dl.fbaipublicfiles.com/video-nonlocal/i3d_baseline_8x8_IN_pretrain_300k_4gpu.log) |
 
 
 
@@ -119,7 +119,7 @@ We now explain the scripts taking the ones trained with 3D convolutions, 400k it
     python modify_caffe2_ftvideo.py ../../data/checkpoints/run_i3d_baseline_400k/checkpoints/c2_model_iter400000.pkl  ../../data/pretrained_model/run_i3d_baseline_400k/affine_model_400k.pkl
     ```
 
-    Note that we have provided one example model (run_i3d_baseline_400k/affine_model_400k.pkl) in [pretrained_model.tar.gz](https://s3.amazonaws.com/video-nonlocal/pretrained_model.tar.gz). Given this converted model, we run the script for training the i3d Non-local Networks with longer clips:
+    Note that we have provided one example model (run_i3d_baseline_400k/affine_model_400k.pkl) in [pretrained_model.tar.gz](https://dl.fbaipublicfiles.com/video-nonlocal/pretrained_model.tar.gz). Given this converted model, we run the script for training the i3d Non-local Networks with longer clips:
     ```Shell
     run_i3d_nlnet_affine_400k.sh
     ```
